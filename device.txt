@@ -1,0 +1,33 @@
+google chrome 浏览器了可以调试市面上流行的手机的移动端的页面。
+具体按F12 左上角第二个图标
+
+适应移动端=设备要做的改动：
+1. 让页面适应手机屏幕尺寸
+2. 交互方式改为触控方式
+3. 
+
+
+让页面适应手机屏幕尺寸：
+1. 加入元信息 viewport
+<meta name="viewport" content="width=[pixel_value|device-width], heigth=[pixel_value|device-height], initial-scale=float_value, minimum-scale=float_value, maximum-scale=float_value, user-scalable=[yes|no]">
+
+width: 宽度，两种选择，具体的像素值或直接写device-width
+heigth:  高度，两种选择，具体的像素值或直接写device-height
+initial-scale: 应用程序启动时缩放的尺度，浮点值， 如1.0 是指原有尺度
+minimum-scale: 用户可以缩放页面到最小的一个尺度
+maximum-scale: 用户可以缩放页面到最大的一个尺度
+user-scalable: 用户是否可以通过手势来缩放页面
+
+
+如何实现手指滑动
+touchstart事件
+touchend事件
+坐标：
+startx, starty
+endx, endy
+
+event对象中有个数组touches，多点触控时，该数组就存储多个手指触控的信息。
+另外一个数组： changedTouches, 储存的是当触摸状态发生改变时的信息
+
+对于手机屏幕，Y轴正方向是向下的。
+
